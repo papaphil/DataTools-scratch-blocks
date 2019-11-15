@@ -301,7 +301,7 @@ class Gen_compressed(threading.Thread):
     if self.closure_env["closure_compiler"] == REMOTE_COMPILER:
       do_compile = self.do_compile_remote
     else:
-      do_compile = self.do_compile_local
+      do_compile = self.do_compile_remote
     json_data = do_compile(params, target_filename)
 
     if self.report_errors(target_filename, filenames, json_data):
@@ -570,10 +570,10 @@ if __name__ == "__main__":
         closure_root, closure_library, "closure", "bin", "calcdeps.py"))
 
     # Sanity check the local compiler
-    test_args = [closure_compiler, os.path.join("build", "test_input.js")]
-    test_proc = subprocess.Popen(test_args, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-    (stdout, _) = test_proc.communicate()
-    assert stdout == read(os.path.join("build", "test_expect.js"))
+    # = [closure_compiler, os.path.join("build", "test_input.js")]
+    #test_proc = subprocess.Popen(test_args, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    #(stdout, _) = test_proc.communicate()
+    #assert stdout == read(os.path.join("build", "test_expect.js"))
 
     print("Using local compiler: google-closure-compiler ...\n")
   except (ImportError, AssertionError):
