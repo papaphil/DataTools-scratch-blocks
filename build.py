@@ -299,7 +299,7 @@ class Gen_compressed(threading.Thread):
 
   def do_compile(self, params, target_filename, filenames, remove):
     if self.closure_env["closure_compiler"] == REMOTE_COMPILER:
-      do_compile = self.do_compile_remote
+      do_compile = self.do_compile_local
     else:
       do_compile = self.do_compile_remote
     json_data = do_compile(params, target_filename)
