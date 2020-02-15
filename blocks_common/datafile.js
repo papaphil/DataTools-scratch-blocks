@@ -17,7 +17,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+/*
+Created by: Alex Burroughs, Zachary Fernbaugh, Phillip Carroll, and Nathanael Hood with the KSU Scratch Data Tools group
+See LICENSE for more information.
+*/
 /**
  * @fileoverview Note block.
  * @author ericr@media.mit.edu (Eric Rosenbaum)
